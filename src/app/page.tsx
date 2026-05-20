@@ -40,6 +40,9 @@ function Chip({ label, type, small }: { label: string; type: string; small?: boo
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type SR = any
+
 export default function Home() {
   const [tab, setTab] = useState<'log' | 'history'>('log')
   const [entries, setEntries] = useState<JournalEntry[]>([])
@@ -50,7 +53,7 @@ export default function Home() {
   const [result, setResult] = useState<JournalEntry | null>(null)
   const [viewing, setViewing] = useState<JournalEntry | null>(null)
   const [isRecording, setIsRecording] = useState(false)
-  const recognitionRef = useRef<InstanceType<typeof window.SpeechRecognition> | null>(null)
+  const recognitionRef = useRef<SR | null>(null)
   const tickerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
