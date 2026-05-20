@@ -50,7 +50,7 @@ export default function Home() {
   const [result, setResult] = useState<JournalEntry | null>(null)
   const [viewing, setViewing] = useState<JournalEntry | null>(null)
   const [isRecording, setIsRecording] = useState(false)
-  const recognitionRef = useRef<SpeechRecognition | null>(null)
+  const recognitionRef = useRef<InstanceType<typeof window.SpeechRecognition> | null>(null)
   const tickerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
