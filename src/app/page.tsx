@@ -84,7 +84,7 @@ export default function Home() {
     rec.continuous = true
     rec.interimResults = true
     let final = ''
-    rec.onresult = (e) => {
+    rec.onresult = (e: any) => {
       let interim = ''
       for (let i = e.resultIndex; i < e.results.length; i++) {
         if (e.results[i].isFinal) final += e.results[i][0].transcript + ' '
